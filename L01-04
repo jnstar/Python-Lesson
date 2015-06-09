@@ -1,0 +1,39 @@
+# contact information query
+while True: 
+	user = raw_input('Plz enter the username:\t') 
+	if user == 'star':
+		p = '123'
+		password = raw_input('Plz enter the password:\t')
+		while password != p:
+			password = raw_input('Wrong answer, enter again:\t')
+		else:
+			print 'Welcome to the contact query script!\n\n'
+			while True:
+				name_search = raw_input('Plz enter the contact name you want to search:\t')
+				famtab = file(r'F:\python\famtab.txt')
+				match = 0
+				while True:
+					lines = famtab.readline()
+					if len(lines) == 0: break
+					if name_search in lines:
+						match = 1 
+						# print match
+						print 'Here\'s the information:\n'
+						print lines
+					else:
+						pass
+				if match != 1:
+					print 'No such iterm!!!'
+				exit_YESorNO = raw_input('Do you want to quit the Triague. y or n ?')
+				while exit_YESorNO != 'y' and exit_YESorNO != 'n':
+					print exit_YESorNO
+					exit_YESorNO = raw_input('y or n ?')
+					print exit_YESorNO
+
+			# print exit_YESorNO
+				if exit_YESorNO == 'y':
+					break
+			if exit_YESorNO == 'y':
+				break
+	else:
+		print 'Sorry, user %s not found, try again!' %user
